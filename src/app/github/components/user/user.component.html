@@ -1,0 +1,21 @@
+<ng-container *ngIf="user$ | async as user">
+
+  <app-user-details [user]="user"></app-user-details>
+
+
+  <ng-container *ngIf="!loading; else loadingSpinner">
+    <ng-container *ngIf="repos$ | async as repos">
+      <h4>Repositórios</h4>
+      <app-repo-list [repos]="repos"></app-repo-list>
+
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #loadingSpinner>
+  <div  class="loading-container">
+    <mat-spinner color="accent">
+    </mat-spinner>
+    Carregando repositórios
+  </div>
+</ng-template>

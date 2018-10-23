@@ -1,0 +1,17 @@
+.repo-headers-align .mat-expansion-panel-header-description {
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 18px;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  > span {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      :first-child {
+          margin-right: 5px;
+      }
+  }
+}

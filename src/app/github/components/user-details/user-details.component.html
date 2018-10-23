@@ -1,0 +1,9 @@
+<section class="details-container">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="userImg"></div>
+      <mat-card-title>{{ user.login }}</mat-card-title>
+      <mat-card-subtitle><a [href]="user.html_url">{{user.html_url}}</a></mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</section>

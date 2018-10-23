@@ -1,1 +1,98 @@
+@import '/sass/utils';
+@import '~@angular/material/theming';
+@import './assets/css/devicon.min.css';
+@include mat-core();
+
+$mat-black: (
+    50 : #e0e0e0,
+    100 : #b3b3b3,
+    200 : #808080,
+    300 : #4d4d4d,
+    400 : #262626,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #a6a6a6,
+    A200 : #8c8c8c,
+    A400 : #737373,
+    A700 : #666666,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$mat-creditoo: (
+    50 : #e6e9f4,
+    100 : #bfc8e5,
+    200 : #95a4d3,
+    300 : #6b7fc1,
+    400 : #4b63b4,
+    500 : #2b48a7,
+    600 : #26419f,
+    700 : #203896,
+    800 : #1a308c,
+    900 : #10217c,
+    A100 : #afb9ff,
+    A200 : #7c8dff,
+    A400 : #4960ff,
+    A700 : #304aff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+
+$hiring-front-end-primary: mat-palette($mat-black);
+$hiring-front-end-accent: mat-palette($mat-creditoo);
+
+// The warn palette is optional (defaults to red).
+$hiring-front-end-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$hiring-front-end-theme: mat-light-theme($hiring-front-end-primary, $hiring-front-end-accent, $hiring-front-end-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($hiring-front-end-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+app-root {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,14 @@
+<div class="search-container">
+
+  <figure title="github-logo">
+    <img src="/assets/images/github-logo-black-120px.png">
+  </figure>
+  <mat-form-field>
+    <input matInput placeholder="Pesquise por um usuário do github" [matAutocomplete]="userAutocomplete" [formControl]="searchControl">
+    <mat-autocomplete #userAutocomplete="matAutocomplete" (optionSelected)="see($event)">
+      <mat-option *ngFor="let user of users$ | async" [value]="user">
+        {{ user.login}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
