@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RepoListComponent } from './repo-list.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { TestingModule } from 'src/testing/utils';
 
 describe('RepoListComponent', () => {
   let component: RepoListComponent;
@@ -9,7 +9,7 @@ describe('RepoListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule],
+      imports: [TestingModule],
       declarations: [ RepoListComponent ]
     })
     .compileComponents();

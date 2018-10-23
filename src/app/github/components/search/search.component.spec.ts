@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SearchComponent } from './search.component';
 import { GithubService } from '../../github.service';
 import { TestingModule } from 'src/testing/utils';
+import { of } from 'rxjs';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -12,7 +13,12 @@ describe('SearchComponent', () => {
     TestBed.configureTestingModule({
       imports: [TestingModule],
       declarations: [ SearchComponent ],
-      providers: [GithubService]
+      providers: [{
+        provide: GithubService,
+        useValue: {
+          searchUsers: (qry:string)=> of([])
+        }
+      }]
     })
     .compileComponents();
   }));
